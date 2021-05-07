@@ -5,13 +5,16 @@ import org.junit.Test;
 import static io.restassured.RestAssured.*;
 public class GetRequest01Dt {
     /*
-    ==Gherkin Language===
-    If you use, "Given", "When", "Then", "And" to create test scenarios, it means you re using Gherkin Language
-    "Given" : It declares prerequisites
-    "When" : It defines actions which user will perform
+                      === Gherkin Language ===
+    If you use, "Given", "When", "Then", "And" to create test scenarios,
+    it means you are using Gherkin Language
+
+    "Given" : Declares prerequisites
+    "When" : Defines actions which user will perform
     "Then" : We talk about outcomes
     "And" : In any part if you have multiple steps use "And" between them
      */
+
     /*
        When
            I send a GET Request to the URL https://api-techproed-test.herokuapp.com/courses
@@ -33,7 +36,7 @@ public class GetRequest01Dt {
 
         //3rd Step : Send the request (Like clicking on Send button in the Postman)
         Response response = given().
-                accept(ContentType.JSON).//"application/json" and ContentType.JSON are same
+                accept(ContentType.JSON).      //"application/json" and ContentType.JSON are same
                 when().                        //it is not must to use accept() but sometimes it solves the problems
                 get(url);
         //to see response body on the console use prettyPrint()
