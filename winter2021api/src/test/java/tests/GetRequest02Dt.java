@@ -14,7 +14,7 @@ public class GetRequest02Dt {
         Then
         HTTP Status Code should be 200
         And Response format should be "application/JSON"
-           for the course whose id is "608bb976c9e4a800151ab367"
+            for the course whose id is "608bb976c9e4a800151ab367"
         And "code" should be "WP100"
         And "image" should be "wordpress.jpg"
         And English "title" should be "Wordpress"
@@ -25,13 +25,16 @@ public class GetRequest02Dt {
     public void get01(){
         //1.Set the url
         String url = "https://api-techproed-test.herokuapp.com/courses/608bb976c9e4a800151ab367";
+
         //2.Set the expected data (we will learn it later)
+
         //3.Send the request
         Response response = given().
-                accept(ContentType.JSON).
-                when().
-                get(url);
+                 accept(ContentType.JSON).
+                 when().
+                 get(url);
         response.prettyPrint();
+
         //4.Assert the things which are given in the test case
         response.
                 then().
@@ -83,13 +86,16 @@ public class GetRequest02Dt {
     public void get03(){
         //1.Step: Set the url
         String url = "https://api-techproed-test.herokuapp.com/courses/608bb976c9e4a800151ab367";
+
         //2.Step: Set the expected data
+
         //3. Step: Send the request
         Response response = given().
                 accept(ContentType.JSON).
                 when().
                 get(url);
         response.prettyPrint();
+
         //4. Step: Assertion:
         assertEquals(200,response.getStatusCode());
         assertEquals("application/json; charset=utf-8",response.getContentType());
