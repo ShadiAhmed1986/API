@@ -57,7 +57,4 @@ public class GetRequest01 {
         System.out.println("Time : " + response.getTime());
     }
 
-
-
-
 }

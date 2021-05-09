@@ -30,6 +30,7 @@ public class GetRequest02 extends HerokuappBaseUrl {
 
         //NOT RECOMMENDED
         //String url = "https://restful-booker.herokuapp.com/booking/1001";
+
         spec.pathParams("first", "booking", "second", 1001);
 
         //2) Set the expected data
@@ -46,6 +47,7 @@ public class GetRequest02 extends HerokuappBaseUrl {
 
         assertTrue(response.asString().contains("Not Found"));
         assertFalse(response.asString().contains("TechProEd"));
+
         //assertEquals(fisrtParameter,secondParameter) - >
         // If first parameter matches with the second parameter you will get pass
         assertEquals(response.getHeader("Server"),"Cowboy");
