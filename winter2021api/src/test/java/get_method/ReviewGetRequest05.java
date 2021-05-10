@@ -3,10 +3,11 @@ package get_method;
 import base_urls.HerokuappBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import static io.restassured.RestAssured.*;
-import static org.junit.Assert.*;
 
-public class GetRequest05 extends HerokuappBaseUrl {
+import static org.junit.Assert.*;
+import static io.restassured.RestAssured.given;
+
+public class ReviewGetRequest05 extends HerokuappBaseUrl {
 
     /*
         When
@@ -18,23 +19,22 @@ public class GetRequest05 extends HerokuappBaseUrl {
      */
 
     @Test
-    public void get01(){
-        //1)Set the URL
-        spec.
-                pathParam("first", "booking").
-                queryParams("firstname", "Eric",
-                        "lastname", "Brown");
+    public void get05(){
+        //1) Set the Url
+        spec.pathParam("first","booking").
+                queryParams("firstname","Susan","lastname","Ericsson");
 
-        //2)Set the expected data
+        //2) Set the expected data
 
-        //3)Send the request
+        //3) Send request
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
         //4) Assert
-        response.then().assertThat().statusCode(200);
-
-        assertTrue(response.asString().contains("bookingid"));
-
+        response.
+                then().
+                assertThat().
+                statusCode(200);
     }
+
 }
