@@ -35,10 +35,13 @@ public class GetRequest06 extends DummyBaseUrl {
     public void get01(){
         //1)Set the URL
         spec.pathParams("first", "employee", "second", 8);
+
         //2)set the expected data
+
         //3)send the request
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
+
         //4)assertion
         response.
                 then().
@@ -54,6 +57,7 @@ public class GetRequest06 extends DummyBaseUrl {
                         "data.profile_image", equalTo(""),
                         "message", equalTo("Successfully! Record has been fetched."));
     }
+
     //create get02 to test same test scenario with a different way
     @Test
     public void get02(){
@@ -66,15 +70,17 @@ public class GetRequest06 extends DummyBaseUrl {
         //4)assertion
         response.then().statusCode(200).contentType(ContentType.JSON).
                 header("Connection", "keep-alive");
+
         //use hard assertion + jsonpath
         JsonPath json = response.jsonPath();
-        assertEquals("status does not match", "success", json.getString("status"));
+        assertEquals("status does not match", "success", json.getInt("status"));
         assertEquals("id does not match", 8, json.getInt("data.id"));
-        assertEquals("name does not match", "Rhona Davidson", json.getString("data.employee_name"));
+        assertEquals("name does not match", "Rhona Davidson", json.getInt("data.employee_name"));
         assertEquals("salary does not match", 327900, json.getInt("data.employee_salary"));
         assertEquals("age does not match", 55, json.getInt("data.employee_age"));
         assertEquals("image does not match", "", json.getString("data.profile_image"));
         assertEquals("message does not match", "Successfully! Record has been fetched.", json.getString("message"));
+
         //use soft assertion +jsonpath()
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(json.getString("status"), "success", "status does not match");
