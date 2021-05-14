@@ -1,14 +1,13 @@
 package get_method;
 
-import base_urls.DummyBaseUrl;
-import base_urls.JasonPlaceHolderBaseUrl;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
 import static io.restassured.RestAssured.*;
 
-public class GetRequest04 extends JasonPlaceHolderBaseUrl {
+public class GetRequest04 extends JsonPlaceHolderBaseUrl {
 
     /*
       When

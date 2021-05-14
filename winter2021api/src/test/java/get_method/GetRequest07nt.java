@@ -1,6 +1,6 @@
 package get_method;
 
-import base_urls.JasonPlaceHolderBaseUrl;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class GetRequest07nt extends JasonPlaceHolderBaseUrl {
+public class GetRequest07nt extends JsonPlaceHolderBaseUrl {
 
     /*
         When

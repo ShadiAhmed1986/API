@@ -1,9 +1,6 @@
 package get_method;
 
-import base_urls.JasonPlaceHolderBaseUrl;
-import io.restassured.http.*;
-import io.restassured.mapper.ObjectMapper;
-import io.restassured.mapper.ObjectMapperType;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
 
@@ -14,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class GetRequest03 extends JasonPlaceHolderBaseUrl {
+public class GetRequest03 extends JsonPlaceHolderBaseUrl {
 
     /*
         When
