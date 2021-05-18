@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 import test_data.HerokuappTestDataSunday;
 
 import java.util.HashMap;
@@ -72,6 +73,7 @@ public class PostRequest01 extends HerokuappBaseUrl {
 
         //2.Way: By using JsonPath
         JsonPath json = response.jsonPath();
+
         assertEquals(expectedData.expectedDataSetUp().get("firstname"), json.getString("booking.firstname"));
         assertEquals(expectedData.expectedDataSetUp().get("lastname"), json.getString("booking.lastname"));
         assertEquals(expectedData.expectedDataSetUp().get("totalprice"), json.getInt("booking.totalprice"));

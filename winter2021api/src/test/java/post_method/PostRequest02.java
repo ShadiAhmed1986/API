@@ -49,6 +49,7 @@ public class PostRequest02 extends JsonPlaceHolderBaseUrl {
         //1.Way: By using GSON
         Map<String,Object> actualData = response.as(HashMap.class);
         System.out.println(actualData);
+
         assertEquals(201,response.getStatusCode());
         assertEquals(expectedData.expectedDataSetUp().get("userId"),actualData.get("userId"));
         assertEquals(expectedData.expectedDataSetUp().get("completed"),actualData.get("completed"));
