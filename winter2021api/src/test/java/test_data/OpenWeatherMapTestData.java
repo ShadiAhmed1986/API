@@ -15,7 +15,7 @@ public class OpenWeatherMapTestData {
     public Map<String,Object> weatherSetUp(){
         Map<String,Object> weather = new HashMap<>();
         weather.put("id",501);
-        weather.put("main","Rain");
+        weather.put("main","Clouds");
         weather.put("description","moderate rain");
         weather.put("icon","10d");
 

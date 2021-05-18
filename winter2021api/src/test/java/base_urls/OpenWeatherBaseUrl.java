@@ -10,6 +10,7 @@ public class OpenWeatherBaseUrl {
 
     @Before
     public void setUp(){
+
         spec = new RequestSpecBuilder().setBaseUri("https://api.openweathermap.org").build();
     }
 }
