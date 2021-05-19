@@ -82,6 +82,7 @@ public class ReviewGetRequest10Sunday extends OpenWeatherBaseUrl {
 
         //4) Assert
         JsonPath json = response.jsonPath();
+
         assertEquals(200,response.statusCode());
         assertEquals(expected.coordSetUp().get("lon"),(Float) json.getFloat("coord.lon"));
         assertEquals(expected.coordSetUp().get("lat"),(Float)json.getFloat("coord.lat"));

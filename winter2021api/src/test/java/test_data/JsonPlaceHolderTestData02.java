@@ -16,7 +16,9 @@ public class JsonPlaceHolderTestData02 {
 
     public Map<String,Object> expectedPatchDataSetUp(){
         Map<String,Object> expected = new HashMap<>();
-        expected.put("title","Tidy your room");
+        expected.put("title","Tidy your room son");
+        expected.put("userId",9);
+        expected.put("completed",false);
 
         return expected;
     }

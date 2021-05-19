@@ -4,9 +4,12 @@ import base_urls.AgroMonitoringBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import static org.hamcrest.Matchers.*;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 import test_data.ReviewAgroMonitoringTestData;
+
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -103,11 +106,11 @@ public class ReviewPostRequest03 extends AgroMonitoringBaseUrl {
         response.prettyPrint();
 
         //4) Assert
-        JsonPath json = response.jsonPath();
-        SoftAssert softAssert = new SoftAssert();
-
-        softAssert.assertEquals(json.getString("type"),expectedData.expectedDataSetUp().get("type"));
-
-        softAssert.assertAll();
+       response.
+               then().
+               assertThat().
+               statusCode(201).
+               body("geo_json.type", equalTo(expectedData.geoJsonSetUp().get("type")));
+        System.out.println(expectedData.geoJsonSetUp().get("type"));
     }
 }
