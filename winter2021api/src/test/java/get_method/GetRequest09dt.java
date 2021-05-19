@@ -1,6 +1,7 @@
 package get_method;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -57,6 +58,11 @@ public class GetRequest09dt extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedDataMap.get("Via"),response.getHeader("Via"));
         assertEquals(expectedDataMap.get("Server"),response.getHeader("Server"));
 
+
+        //GSON : Serialization : Converting Java object to Json Data
+        Gson gson = new Gson();
+        String jsonFromJavaObj =  gson.toJson(actualDataMap);
+        System.out.println("Java to Json: "+ jsonFromJavaObj);
     }
 
 }

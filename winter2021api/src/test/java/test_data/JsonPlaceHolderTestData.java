@@ -4,6 +4,13 @@ import java.util.Map;
 
 public class JsonPlaceHolderTestData {
 
+    public String expected = "{\n" +
+            "  \"userId\": 10,\n" +
+            " \"id\": 198,\n" +
+            "  \"title\": \"quis eius est sint explicabo\",\n" +
+            " \"completed\": true\n" +
+            "}";
+
     Map<String, Object> expectedDataMap= new HashMap<>();
 
     public Map<String,Object> setUpData(){
