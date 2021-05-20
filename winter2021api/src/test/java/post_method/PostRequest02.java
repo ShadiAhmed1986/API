@@ -42,7 +42,11 @@ public class PostRequest02 extends JsonPlaceHolderBaseUrl {
         JsonPlaceHolderTestData02 expectedData = new JsonPlaceHolderTestData02();
 
         //3) Send the post request
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData.expectedDataSetUp()).post("/{first}");
+        Response response = given()
+                .spec(spec)
+                .auth()
+                .basic("admin","1234")
+                .contentType(ContentType.JSON).body(expectedData.expectedDataSetUp()).post("/{first}");
         response.prettyPrint();
 
         //4) Assert
