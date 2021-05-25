@@ -63,16 +63,20 @@ public class GetRequest06 extends DummyBaseUrl {
     public void get02(){
         //1)Set the URL
         spec.pathParams("first", "employee", "second", 8);
+
         //2)set the expected data
+
         //3)send the request
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
+
         //4)assertion
         response.then().statusCode(200).contentType(ContentType.JSON).
                 header("Connection", "keep-alive");
 
         //use hard assertion + jsonpath
         JsonPath json = response.jsonPath();
+
         assertEquals("status does not match", "success", json.getInt("status"));
         assertEquals("id does not match", 8, json.getInt("data.id"));
         assertEquals("name does not match", "Rhona Davidson", json.getInt("data.employee_name"));
@@ -83,6 +87,7 @@ public class GetRequest06 extends DummyBaseUrl {
 
         //use soft assertion +jsonpath()
         SoftAssert softAssert = new SoftAssert();
+
         softAssert.assertEquals(json.getString("status"), "success", "status does not match");
         softAssert.assertEquals(json.getInt("data.id"), 8, "id does not match");
         softAssert.assertEquals(json.getString("data.employee_name"), "Rhona Davidson", "name does not match");

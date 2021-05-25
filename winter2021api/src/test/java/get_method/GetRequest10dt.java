@@ -1,6 +1,7 @@
 package get_method;
 
 import base_urls.HerokuappBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.HerokuappTestData;
@@ -44,7 +45,11 @@ public class GetRequest10dt extends HerokuappBaseUrl {
         Map<String,Object> expectedDataMap = expectedDataObj.setUpData();
 
         //Send the request
-        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .when()
+                        .get("/{first}/{second}");
         response.prettyPrint();
 
         //Assertion
@@ -64,11 +69,11 @@ public class GetRequest10dt extends HerokuappBaseUrl {
 //        assertEquals(expectedDataMap.get("depositepaid"),actualDataMap.get("depositepaid"));
 
         //bookingdates
-      //  assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));
+       // assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));
 
       //  assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkout"),((Map)actualDataMap.get("bookingdates")).get("checkout"));
 
-        assertEquals(expectedDataMap.get("additionalneeds"),actualDataMap.get("additionalneeds"));
+//        assertEquals(expectedDataMap.get("additionalneeds"),actualDataMap.get("additionalneeds"));
     }
 
 

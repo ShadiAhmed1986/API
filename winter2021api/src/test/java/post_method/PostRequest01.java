@@ -56,7 +56,13 @@ public class PostRequest01 extends HerokuappBaseUrl {
         HerokuappTestDataSunday expectedData = new HerokuappTestDataSunday();
 
         //3)Send POST Request
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData.expectedDataSetUp()).when().post("/{first}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .contentType(ContentType.JSON)
+                        .body(expectedData.expectedDataSetUp())
+                        .when()
+                        .post("/{first}");
         response.prettyPrint();
 
         Map<String, Object> actualData = response.as(HashMap.class);

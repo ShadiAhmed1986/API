@@ -17,7 +17,8 @@ public class GetRequest09dt extends JsonPlaceHolderBaseUrl {
     /*
         De-Serialization: Converting Json Data to any Java Object is called "De-Serialization".
         Serialization: Converting Java Object to Json data is called "Serialization".
-        To do De-Serialization and Serialization, we have 2 ways;
+
+        To do De-Serialization and Serialization, we have 2 ways:
         1)Using GSON
         2)Using Object Mapper
     */
@@ -40,12 +41,17 @@ public class GetRequest09dt extends JsonPlaceHolderBaseUrl {
         //1) Set the url
         spec.pathParams("first","todos","second",2);
 
-        //2) Set the expected data
+        //2) Set the expected data - get the data from test data class by creating an object
         JsonPlaceHolderTestData expectedDataObj = new JsonPlaceHolderTestData();
+
         Map<String,Object> expectedDataMap = expectedDataObj.setUpData();
 
         //3) Send the request
-        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{first}/{second}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .accept(ContentType.JSON)
+                        .when().get("/{first}/{second}");
         response.prettyPrint();
 
         //4) Assertion

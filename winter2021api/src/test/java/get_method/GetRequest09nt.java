@@ -53,7 +53,12 @@ public class GetRequest09nt extends HerokuappBaseUrl {
         System.out.println(expectedDataMap);
 
         //3)Send the request
-        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{first}/{second}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .accept(ContentType.JSON)
+                        .when()
+                        .get("/{first}/{second}");
         response.prettyPrint();
 
         //Use GSON for DE-Serialization

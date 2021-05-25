@@ -34,7 +34,12 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
         //2)Set the expected data
 
         //3) Send the request
-        Response response = given().spec(spec).accept("application/JSON").when().get("/{first}/{second}");
+        Response response =
+                given()
+                        .spec(spec)
+                        .accept("application/JSON")
+                        .when()
+                        .get("/{first}/{second}");
         response.prettyPrint();
         System.out.println("Status code: " + response.getStatusCode());
 

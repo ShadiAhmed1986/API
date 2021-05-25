@@ -1,7 +1,6 @@
 package get_method;
 
 import base_urls.DummyBaseUrl;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -28,11 +27,20 @@ public class GetRequest07 extends DummyBaseUrl {
 
     @Test
     public void get01(){
+        //Set the URL
         spec.pathParam("employeesName","employees");
 
-        Response response = given().spec(spec).when().get("/{employeesName}");
+        //Set the expected data
+
+        //Send the request
+        Response response =
+                         given()
+                        .spec(spec)
+                        .when()
+                        .get("/{employeesName}");
         response.prettyPrint();
 
+        //Assert
         JsonPath json = response.jsonPath();
 
         SoftAssert softAssert = new SoftAssert();

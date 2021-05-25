@@ -118,19 +118,23 @@ public class GetRequest02Dt {
         //1.Step: Set the url
         String url = "https://api-techproed-test.herokuapp.com/courses/608bb976c9e4a800151ab367";
         //2.Step: Set the expected data
+
         //3. Step: Send the request
         Response response = given().
                 accept(ContentType.JSON).
                 when().
                 get(url);
         response.prettyPrint();
+
         //4. Step: Assertion
         SoftAssert softAssert = new SoftAssert();
+
         softAssert.assertEquals(response.getStatusCode(),200,"status code is wrong");//you can add some messages in order to see when your test has failed
         softAssert.assertEquals(response.getContentType(),"application/json; charset=utf-8");
         softAssert.assertTrue(response.asString().contains("WP100"),"NO MATCH");
         softAssert.assertTrue(response.asString().contains("wordpress.jpg"),"NO MATCH");
         softAssert.assertTrue(response.asString().contains("Wordpress in nasıl kullanılacağını öğreneceğiz"),"NO MATCH");
+
         softAssert.assertAll();
     }
 }

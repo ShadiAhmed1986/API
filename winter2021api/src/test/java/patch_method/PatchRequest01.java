@@ -36,7 +36,13 @@ public class PatchRequest01 extends JsonPlaceHolderBaseUrl {
         JsonPlaceHolderTestData02 expected = new JsonPlaceHolderTestData02();
 
         //3) Send PATCH Request
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expected.expectedPatchDataSetUp()).when().patch("/{first}/{second}");
+        Response response =
+                         given()
+                        .spec(spec)
+                        .contentType(ContentType.JSON)
+                        .body(expected.expectedPatchDataSetUp())
+                        .when()
+                        .patch("/{first}/{second}");
         response.prettyPrint();
 
         //4) Assert the output

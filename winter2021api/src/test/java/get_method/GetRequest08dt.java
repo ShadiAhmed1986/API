@@ -1,6 +1,7 @@
 package get_method;
 
 import base_urls.DummyBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -26,12 +27,12 @@ public class GetRequest08dt extends DummyBaseUrl {
     @Test
     public void get01(){
         //1) Set the Url
-        spec.pathParam("employees","employees");
+        spec.pathParams("first","api","second","v1","third","employees");
 
         //2) Set the expected data
 
         //3) Send the request
-        Response response = given().spec(spec).when().get("/{employees}");
+        Response response = given().spec(spec).when().get("/{first}/{second}/{third}");
         response.prettyPrint();
 
         //4) Assert
@@ -39,8 +40,8 @@ public class GetRequest08dt extends DummyBaseUrl {
 
         JsonPath json = response.jsonPath();
 
-        List<Integer> idList = json.getList("data.findAll{(it.id)>10}.id");
         //1)Print ids greater than 10
+        List<Integer> idList = json.getList("data.findAll{(it.id)>10}.id");
         System.out.println(idList);
 
         //Assert that there are 14 ids greater than 10

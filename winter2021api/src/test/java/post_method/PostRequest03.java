@@ -92,7 +92,8 @@ public class PostRequest03 extends AgroMonitoringBaseUrl {
 
         //3) Send post request
         Response response = given().
-                            spec(spec).contentType(ContentType.JSON).
+                            spec(spec)
+                            .contentType(ContentType.JSON).
                             body(expectedData.expectedDataSetUp()).
                             when().
                             post("/{first}/{second}/{third}");

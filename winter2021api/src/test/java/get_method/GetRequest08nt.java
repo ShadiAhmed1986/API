@@ -17,6 +17,7 @@ public class GetRequest08nt extends JsonPlaceHolderBaseUrl {
         De-Serialization: Converting Json Data to any Java Object is called "De-Serialization".
         Serialization: Converting Java Object to Json data is called "Serialization".
         To do De-Serialization and Serialization, we have 2 ways;
+
         1)Using GSON
         2)Using Object Mapper
     */
@@ -48,7 +49,11 @@ public class GetRequest08nt extends JsonPlaceHolderBaseUrl {
         expectedDataMap.put("Server","cloudflare");
 
         //3) Send request
-        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{first}/{second}");
+        Response response = given()
+                .spec(spec)
+                .accept(ContentType.JSON)
+                .when()
+                .get("/{first}/{second}");
         response.prettyPrint();
 
         Map<String,Object>actualDataMap = response.as(HashMap.class);

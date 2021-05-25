@@ -41,17 +41,22 @@ public class PutRequest01 extends JsonPlaceHolderBaseUrl {
         JsonPlaceHolderTestData02 expected = new JsonPlaceHolderTestData02();
 
         //3) Send the Put Request
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expected.expectedDataSetUp()).when().put("/{first}/{second}");
+        Response response =
+                         given()
+                        .spec(spec)
+                        .contentType(ContentType.JSON)
+                        .body(expected.expectedDataSetUp())
+                        .when()
+                        .put("/{first}/{second}");
         response.prettyPrint();
 
         //4) Assert the output
-
+        //Using GSON=> Convert the actual data to a HAshMap
         Map<String,Object> actual = response.as(HashMap.class);
         System.out.println(actual);
 
         assertEquals(expected.expectedDataSetUp().get("completed"),actual.get("completed"));
         assertEquals(expected.expectedDataSetUp().get("title"),actual.get("title"));
         assertEquals(expected.expectedDataSetUp().get("userId"),actual.get("userId"));
-
     }
 }

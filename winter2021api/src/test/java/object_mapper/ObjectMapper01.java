@@ -38,7 +38,10 @@ public class ObjectMapper01 extends JsonPlaceHolderBaseUrl {
         System.out.println(expectedMap);
 
         //3) Send the request
-        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .when().get("/{first}/{second}");
         response.prettyPrint();
 
         HashMap<String,Object>  actualMap = JsonUtil.convertJsonToJava(response.asString(),HashMap.class);

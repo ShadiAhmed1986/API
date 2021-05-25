@@ -46,10 +46,13 @@ public class PostRequest02 extends JsonPlaceHolderBaseUrl {
                 .spec(spec)
                 .auth()
                 .basic("admin","1234")
-                .contentType(ContentType.JSON).body(expectedData.expectedDataSetUp()).post("/{first}");
+                .contentType(ContentType.JSON)
+                .body(expectedData.expectedDataSetUp())
+                .post("/{first}");
         response.prettyPrint();
 
         //4) Assert
+
         //1.Way: By using GSON
         Map<String,Object> actualData = response.as(HashMap.class);
         System.out.println(actualData);

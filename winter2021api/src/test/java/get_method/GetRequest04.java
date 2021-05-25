@@ -11,7 +11,7 @@ public class GetRequest04 extends JsonPlaceHolderBaseUrl {
 
     /*
       When
-       I send a GET request to REST API URL https://jsonplaceholder.typicode.com/todos
+        I send a GET request to REST API URL https://jsonplaceholder.typicode.com/todos
       And Accept type is “application/json”
       Then
       HTTP Status Code should be 200
@@ -28,7 +28,12 @@ public class GetRequest04 extends JsonPlaceHolderBaseUrl {
         //2)Set expected data
 
         //3)Send the request
-        Response response = given().spec(spec).accept("application/json").when().get("/{first}");
+        Response response =
+                        given()
+                        .spec(spec)
+                        .accept("application/json")
+                        .when()
+                        .get("/{first}");
         response.prettyPrint();
 
         //4) Assert

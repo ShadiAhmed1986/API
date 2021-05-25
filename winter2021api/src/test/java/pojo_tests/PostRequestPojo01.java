@@ -39,11 +39,17 @@ public class PostRequestPojo01 extends JsonPlaceHolderBaseUrl {
         System.out.println(expectedPojo.isCompleted());
 
         //Send the request
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedPojo).post("/{todosName}");
+        Response response =
+                given()
+                        .spec(spec)
+                        .contentType(ContentType.JSON)
+                        .body(expectedPojo)
+                        .post("/{todosName}");
         response.prettyPrint();
 
         //Use GSON for deserialization (json->Java)
         TodosPojo actualPojo = response.as(TodosPojo.class);
+
         System.out.println("Actual data from GSON: "+actualPojo);
         assertEquals(201, response.statusCode());
         assertEquals(expectedPojo.getUserId(),actualPojo.getUserId());
@@ -52,6 +58,7 @@ public class PostRequestPojo01 extends JsonPlaceHolderBaseUrl {
 
         //Use Object Mapper for deserialization
         TodosPojo actualPojo2 = JsonUtil.convertJsonToJava(response.asString(),TodosPojo.class);
+
         System.out.println("Actual data from object mapper: "+ actualPojo2);
         assertEquals(201, response.statusCode());
         assertEquals(expectedPojo.getUserId(),actualPojo2.getUserId());
