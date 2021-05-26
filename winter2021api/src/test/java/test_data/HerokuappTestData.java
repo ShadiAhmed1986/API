@@ -6,8 +6,8 @@ import java.util.Map;
 public class HerokuappTestData {
 
 public String expected = "{\n" +
-        "                                            \"firstname\": \"Mark\",\n" +
-        "                                            \"lastname\": \"Ericsson\",\n" +
+        "                                            \"firstname\": \"Eric\",\n" +
+        "                                            \"lastname\": \"Wilson\",\n" +
         "                                            \"totalprice\": 726,\n" +
         "                                            \"depositpaid\": true,\n" +
         "                                            \"bookingdates\": {\n" +
