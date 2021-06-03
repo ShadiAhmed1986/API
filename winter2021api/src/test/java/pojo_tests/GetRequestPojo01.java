@@ -77,6 +77,7 @@ public class GetRequestPojo01 extends TechProBaseUrl {
 
         //Use ObjectMapper for de-serialization
         CoursePojo actualPojo2 = JsonUtil.convertJsonToJava(response.asString(),CoursePojo.class);
+
         assertEquals(expectedPojo.getTitle().getEn(),actualPojo2.getTitle().getEn());
         assertEquals(expectedPojo.getShortDescription().getEn(),actualPojo2.getShortDescription().getEn());
         assertEquals(expectedPojo.getShortDescription().getTr(),actualPojo2.getShortDescription().getTr());

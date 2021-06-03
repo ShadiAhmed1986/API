@@ -15,16 +15,24 @@ public class TodosPojo {
     5.Create toString()
      */
 
+    //1.Create private variables
     private int userId;
     private String title;
     private boolean completed;
+
+    //2.Create constructor without parameter
     public TodosPojo() {
     }
+
+
+    //3.Create constructor with all parameters
     public TodosPojo(int userId, String title, boolean completed) {
         this.userId = userId;
         this.title = title;
         this.completed = completed;
     }
+
+    //4.Create all getters and setters
     public int getUserId() {
         return userId;
     }
@@ -43,6 +51,8 @@ public class TodosPojo {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    //5.Create toString()
     @Override
     public String toString() {
         return "TodosPojo{" +
