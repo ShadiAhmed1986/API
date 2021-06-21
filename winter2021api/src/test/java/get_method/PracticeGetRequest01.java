@@ -60,8 +60,5 @@ Then
         spec.pathParams("first","data","second",2.5,"third","weather").queryParams("q","London","appid","f4ffe3b2ef1fcb3600ab1d7fbc88c2f0");
 
 
-
-
-
     }
 }

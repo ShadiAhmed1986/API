@@ -11,9 +11,9 @@ public class GetRequest01 {
     /*
         In API test cases and automation scripts, we use "Given" , "When", "Then" and "And"
         "Given" : It declares prerequisites
-        "When" : It declares the action which user will perform
-        "Then" : It declares outputs
-        "And": It can be used after  "Given", after "When" and after "Then" for multiple actions
+        "When"  : It declares the action which user will perform
+        "Then"  : It declares outputs
+        "And"   : It can be used after  "Given", after "When" and after "Then" for multiple actions
      */
 
     /*

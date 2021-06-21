@@ -11,7 +11,7 @@ public class Review {
     Hard Assertion=>it stops execution when it finds the error
                    assertThat(), assertEquals(), assertTrue(), assertFalse()
 
-    Soft Assertion=>it doesn't stop execution when it finds the error. It gives separate reports for each error
+    Soft Assertion => it doesn't stop execution when it finds the error. It gives separate reports for each error
 
     Base url
     Path parameters

@@ -50,7 +50,7 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
             It executes all tests and gives you a report about the past ones and failed ones.
          */
 
-        //1.Way
+        //1.Way-> Hard Assertion
         response.
                 then().
                 assertThat().
@@ -66,7 +66,7 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
             it gives you report for every failed test("Soft Assertion")
          */
 
-        //2.Way
+        //2.Way -> Soft Assertion
         response.
                then().assertThat().
                statusCode(200).
@@ -75,7 +75,7 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
                         "completed",equalTo(false),
                         "userId",equalTo(2));
 
-        //3.Way
+        //3.Way -> Hard Assertion
         //HTTP Status Code should be 200
         //assertEquals(expected,actual)
         assertEquals(200,response.getStatusCode());

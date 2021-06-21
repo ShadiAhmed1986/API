@@ -48,7 +48,7 @@ public class GetRequest02 extends HerokuappBaseUrl {
         assertTrue(response.asString().contains("Not Found"));
         assertFalse(response.asString().contains("TechProEd"));
 
-        //assertEquals(fisrtParameter,secondParameter) - >
+        //assertEquals(firstParameter,secondParameter) - >
         // If first parameter matches with the second parameter you will get pass
         assertEquals(response.getHeader("Server"),"Cowboy");
 

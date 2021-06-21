@@ -69,6 +69,7 @@ public class PostRequest01 extends HerokuappBaseUrl {
         System.out.println(actualData);
 
         //4)Assert the output
+
         //1.Way: By using GSON
         assertEquals(expectedData.expectedDataSetUp().get("firstname"), ((Map)actualData.get("booking")).get("firstname"));
         assertEquals(expectedData.expectedDataSetUp().get("lastname"), ((Map)actualData.get("booking")).get("lastname"));

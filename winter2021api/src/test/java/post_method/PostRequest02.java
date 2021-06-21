@@ -62,7 +62,10 @@ public class PostRequest02 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedData.expectedDataSetUp().get("completed"),actualData.get("completed"));
         assertEquals(expectedData.expectedDataSetUp().get("title"),actualData.get("title"));
 
-        //2. Way: JsonPath with Soft Assertion(Verification) ==> a)Create SoftAssert Object b)Use assert methods c) assertAll()
+        //2. Way: JsonPath with Soft Assertion(Verification)
+        //        a)Create SoftAssert Object
+        //        b)Use assert methods
+        //        c) assertAll()
         JsonPath json = response.jsonPath();
         SoftAssert softAssert = new SoftAssert();
 

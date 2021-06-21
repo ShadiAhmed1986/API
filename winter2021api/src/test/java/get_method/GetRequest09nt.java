@@ -73,7 +73,5 @@ public class GetRequest09nt extends HerokuappBaseUrl {
         assertEquals(expectedDataMap.get("depositpaid"), actualDataMap.get("depositpaid"));
         assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"), ((Map)actualDataMap.get("bookingdates")).get("checkin"));
         assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkout"), ((Map)actualDataMap.get("bookingdates")).get("checkout"));
-
     }
-
 }
